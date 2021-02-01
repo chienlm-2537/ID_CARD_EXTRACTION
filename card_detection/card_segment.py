@@ -22,6 +22,7 @@ def segment_mask(image):
     y1 = int(outputs["instances"].pred_boxes.tensor[0][1])
     x2 = int(outputs["instances"].pred_boxes.tensor[0][2])
     y2 = int(outputs["instances"].pred_boxes.tensor[0][3])
+    # id_card = image[y1:y2, x1:x2]
 
 
     # y1 = int(y1 - 0.2  * y1)
@@ -47,3 +48,10 @@ def convexHullFill(mask):
     mask = cv2.fillPoly(mask, pts=hull_, color=(255, 255, 255))
     return mask
     # card_detection/models/model_final.pth
+
+def caculate_ratio_white_mask(mask):
+    w, h = mask.shape
+    TotalNumberOfPixels = int(w*h)
+    WhitePixels = cv2.countNonZero(mask)
+    ratio = round(WhitePixels/TotalNumberOfPixels, 2)
+    return ratio
