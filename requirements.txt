@@ -7,8 +7,8 @@ cloudpickle==1.6.0
 cycler==0.10.0
 Cython==0.29.21
 dataclasses==0.8
-decorator==4.4.2
--e git+https://github.com/facebookresearch/detectron2.git@42ff5347f177e4f9883efea94da7b51d862c6151#egg=detectron2
+# decorator==4.4.2
+# -e git+https://github.com/facebookresearch/detectron2.git@42ff5347f177e4f9883efea94da7b51d862c6151#egg=detectron2
 einops==0.2.0
 filelock==3.0.12
 flatbuffers==1.12
